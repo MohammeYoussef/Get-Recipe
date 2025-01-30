@@ -1,4 +1,5 @@
-import { QueryKeys } from "./../../utils/constants/QueryEnums";
+import { QueryKeys } from "./../../../../utils/constants/QueryEnums";
+
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { Toast } from "primereact/toast";

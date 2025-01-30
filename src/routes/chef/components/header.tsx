@@ -1,12 +1,14 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 
-import { useNameContext } from "../context";
+import { useNameContext } from "./context";
+import { Link } from "react-router";
 
 function Header() {
   const { name } = useNameContext();
 
   return (
     <div className="flex  justify-center items-center bg-cyan-950 pt-4 pb-4  mb-0">
+      <Link to="/contact">Go to Contact</Link>
       <Icon
         icon="simple-icons:codechef"
         width="60"

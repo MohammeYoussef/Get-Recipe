@@ -5,8 +5,9 @@ import { Button } from "primereact/button";
 import { useState } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js"; // Import the Icon component
 import Recipe from "./recipe";
-import useGetRecipeFromGemini from "./query";
+
 import { IngredientType } from "./type";
+import useGetRecipeFromGemini from "./query";
 
 function ChefBody() {
   const {
