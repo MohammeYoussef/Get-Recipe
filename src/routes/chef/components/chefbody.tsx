@@ -26,7 +26,6 @@ function ChefBody() {
   const [enbledQuery, setEnbledQuery] = useState<boolean>(false);
   const { data, isLoading } = useGetRecipeFromGemini(ingredients, enbledQuery);
 
-  console.log("Data response : ", data);
   function toggleRecipeShown() {
     setRecipeShown((prevShown) => !prevShown);
   }
@@ -37,7 +36,7 @@ function ChefBody() {
   }
 
   return (
-    <div className="bg-cyan-950 h-screen p-8 flex flex-col relative overflow-hidden">
+    <div className="bg-cyan-950 h-screen p-8 flex flex-col relative ">
       {/* Background Icon */}
       <Icon
         icon="simple-icons:codechef" // Replace with your desired icon
@@ -125,7 +124,7 @@ function ChefBody() {
           </ul>
         </div>
       </div>
-
+      {data && <Recipe data={data} recipeShown={recipeShown} />}
       {/* Bottom Section */}
       <div className="bg-gradient-to-r p-5 flex justify-between mb-20 from-cyan-300 to-blue-500 rounded-xl  relative z-10">
         <div className="flex flex-col gap-2">
@@ -152,8 +151,6 @@ function ChefBody() {
           }}
         />
       </div>
-
-      {data && <Recipe data={data} recipeShown={recipeShown} />}
     </div>
   );
 }

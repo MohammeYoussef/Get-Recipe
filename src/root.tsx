@@ -5,6 +5,7 @@ import "./index.css";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import "primereact/resources/primereact.min.css"; // Core CSS
 import "primeicons/primeicons.css"; // Icons
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -26,9 +27,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function Root() {
+  const queryClient = new QueryClient();
   return (
-    <PrimeReactProvider>
-      <Outlet />
-    </PrimeReactProvider>
+    <QueryClientProvider client={queryClient}>
+      <PrimeReactProvider>
+        <Outlet />
+      </PrimeReactProvider>
+    </QueryClientProvider>
   );
 }
