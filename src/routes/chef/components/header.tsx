@@ -8,7 +8,7 @@ function Header() {
 
   return (
     <div className="flex  justify-center bg-blue items-center bg-cyan-950 pt-4 pb-4  mb-0">
-      <Link to="/contact">Go to Contact</Link>
+      {/* <Link to="/contact">Go to Contact</Link> */}
       <Icon
         icon="simple-icons:codechef"
         width="60"
